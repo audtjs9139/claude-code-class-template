@@ -71,12 +71,9 @@ function ComboboxInput({
           <InputGroupButton
             size="icon-xs"
             variant="ghost"
-            asChild
-            data-slot="input-group-button"
-            className="group-has-data-[slot=combobox-clear]/input-group:hidden data-pressed:bg-transparent"
-            disabled={disabled}
+            render={<ComboboxPrimitive.Trigger data-slot="input-group-button" className="group-has-data-[slot=combobox-clear]/input-group:hidden data-pressed:bg-transparent" disabled={disabled} />}
           >
-            <ComboboxTrigger />
+            <ChevronDownIcon className="pointer-events-none size-4 text-muted-foreground" />
           </InputGroupButton>
         )}
         {showClear && <ComboboxClear disabled={disabled} />}
